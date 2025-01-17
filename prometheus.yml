@@ -9,7 +9,7 @@ alerting:
         - targets: []
 
 scrape_configs:
-  - job_name: 'prometheus'
+  - job_name: "prometheus"
     metrics_path: /metrics
     static_configs:
-      - targets: ['localhost:9090', 'thermofridge:8000']
+      - targets: ["localhost:9090", "heatpump:8000", "thermofridge:8000"]
