@@ -1,7 +1,6 @@
 services:
   prometheus:
     image: prom/prometheus:v3.1.0
-    container_name: prometheus
     restart: on-failure
     ports:
       - 9090:9090
@@ -9,19 +8,18 @@ services:
       - ./prometheus.yml:/etc/prometheus/prometheus.yml
       - prometheus-data:/prometheus
     networks:
-      - monitoring
+      - network
   grafana:
     image: grafana/grafana:11.4.0
-    container_name: grafana
     restart: on-failure
     ports:
       - 3000:3000
     volumes:
       - grafana-data:/var/lib/grafana
     networks:
-      - monitoring
+      - network
 networks:
-  monitoring:
+  network:
     driver: bridge
 volumes:
   grafana-data:

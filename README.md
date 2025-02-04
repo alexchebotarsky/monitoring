@@ -1,19 +1,19 @@
-# Grafana monitoring
+# monitoring
 
 ### Installation
 
-- Add custom systemctl service in `/etc/systemd/system/grafana.service`:
+- Add custom systemctl service in `/etc/systemd/system/monitoring.service`:
 
   ```
   [Unit]
-  Description=Grafana
+  Description=Monitoring
   After=network.target docker.service
   Requires=docker.service
 
   [Service]
   Type=simple
   User=USER_NAME_HERE
-  WorkingDirectory=/path/to/grafana
+  WorkingDirectory=/path/to/monitoring
   ExecStart=docker compose up
   ExecStop=docker compose down
   Restart=on-failure
@@ -27,5 +27,5 @@
   Then enable the service to run on startup:
 
   ```
-  sudo systemctl enable grafana.service
+  sudo systemctl enable monitoring.service
   ```
