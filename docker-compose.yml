@@ -1,6 +1,6 @@
 services:
   prometheus:
-    image: prom/prometheus:v3.1.0
+    image: prom/prometheus:v3.3.0
     restart: on-failure
     ports:
       - 9090:9090
@@ -10,7 +10,7 @@ services:
     networks:
       - network
   grafana:
-    image: grafana/grafana:11.4.0
+    image: grafana/grafana:11.6.0
     restart: on-failure
     ports:
       - 3000:3000
