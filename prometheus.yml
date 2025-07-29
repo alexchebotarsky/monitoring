@@ -12,4 +12,4 @@ scrape_configs:
   - job_name: "prometheus"
     metrics_path: /metrics
     static_configs:
-      - targets: ["localhost:9090", "heatpump-api:8000", "thermofridge-api:8001"]
+      - targets: ["localhost:9090", "thermostat-api:8000"]
