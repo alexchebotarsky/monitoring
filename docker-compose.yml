@@ -9,6 +9,14 @@ services:
       - prometheus-data:/prometheus
     networks:
       - network
+  node-exporter:
+    image: prom/node-exporter:v1.9.1
+    restart: on-failure
+    ports:
+      - 9100:9100
+    privileged: true
+    networks:
+      - network
   grafana:
     image: grafana/grafana:12.1.1
     restart: on-failure
